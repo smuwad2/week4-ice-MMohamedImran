@@ -10,7 +10,13 @@
         }
 
         /* add CSS code here */
-        
+        #div2 {
+            width: 200px;
+            height: 200px;
+            
+            background-color: goldenrod;
+            border-radius: 50%;
+        }
     </style>
 
     
@@ -26,7 +32,19 @@
     <script>
         var square=true;
        // add code here
-        
+        // var cElem=document.getElementById("div1")
+        // cElem.style.border-radius: 50%
+        function changeShape(){
+            let divelem=document.getElementById("div1");
+            if (square) {
+                divelem.style.borderRadius="50%";
+
+            }
+            else {
+                divelem.style.borderRadius="0";
+            }
+            square= !square
+        }
     </script>
 
 </body>
