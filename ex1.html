@@ -16,15 +16,50 @@
         </form>
 
         <script>
-        
+            //function processForm(){
+            //  var frmElem = document.forms["inputForm"];
+            // document.forms["inputForm"];
+            //  console.log(frmElem["id"])
+            //}
+            // var frm=document.forms["inputForm"];
+            // var id=frm.id.value;
+            // var age=frm.age.value;
+            // var email=frm.email.value;
+            // var password=frm.password.value;
+
+
             function validateForm(formName) {
                 // Error messages:
                 // Invalid age: Age must be between 10 and 40.
                 // Invalid email: Email must contain the character @.
                 // Empty password: Password must be non-empty.
+                
                 var errorMessages="";
+                // if (!(Age>=10 & Age<=40)){errorMessages+="Invalid age: Age must be between 10 and 40."+"<br>"}
+                let frmElem=document.forms[formName];
+                const idVal = frmElem["id"].value;
+                const ageVal = frmElem["age"].value;
+                const emailVal = frmElem["email"].value;
+                const passwordVal = frmElem["password"].value;
+                if (idVal.length>10){
+                    errorMessages+="ID value cannot be more than 10. \n";
+                }
+                if (ageVal<10 || ageVal>40){
+                    errorMessages+= "Age must be between 10 and 40. \n";
+                }
+                // can also use includes
+                if (emailVal.indexOf("@")==-1){
+                    errorMessages+= "Email must contain the character @. \n";
+                }
                 
-                
+                if (passwordVal.trim().length==0){
+                    errorMessages+= "Password must be non-empty. \n";
+                }
+                if (errorMessages.length!=0){
+                    alert(errorMessages);
+                    return false;
+                }
+                return true
             }
      
          </script>
