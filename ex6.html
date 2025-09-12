@@ -19,8 +19,21 @@
     <script>
         
         // add code here
+        var item = document.getElementById("select_item");
+       //the first parameter
+       item.addEventListener("change", changeIt);
         
+       function changeIt(){
+        var listadd=document.getElementById("shopList");
+        var list = document.createElement("li");
+        var node = document.createTextNode(item.value);
+        list.appendChild(node);
+        listadd.appendChild(list);
         
+
+
+
+       }
     </script>
 
     
